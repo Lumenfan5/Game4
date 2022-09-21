@@ -12,12 +12,13 @@ namespace Geekbrains
         {
             _offset = transform.position - Player.transform.position;
         }
-        private void LateUpdate()
+        private void Update()
         {
             Camera.main.fieldOfView -= Input.GetAxis("Mouse ScrollWheel")*10f;
             transform.position = Player.transform.position + _offset;           
 
         }
+
     }
 }
 
