@@ -8,7 +8,7 @@ namespace Geekbrains
     {                
         void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("Player"))
+            if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("God"))
             {
                 GameObject[] gameObjects;
                 gameObjects = GameObject.FindGameObjectsWithTag("SphereWin");

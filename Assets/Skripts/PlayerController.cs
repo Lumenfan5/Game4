@@ -80,6 +80,11 @@ namespace Geekbrains
             
 
         }        
-        
+        public void Boost()
+        {
+            speed = 30f;
+            run_speed = 50f;
+            transform.gameObject.tag = "God";
+        }
     }
 }
