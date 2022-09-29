@@ -3,26 +3,31 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-
-public class Text_Boost : MonoBehaviour
-{  
-    public void Start()
+namespace Geekbrains
+{
+    public class Text_Boost : MonoBehaviour
     {
-        Norm();
+        public void Start()
+        {
+            Norm();
+        }
+
+
+        public void BonusSpeed()
+        {
+            GetComponent<Canvas>().enabled = true;
+            Invoke(nameof(Norm), 2.2f);
+
+        }
+
+        void Norm()
+        {
+            GetComponent<Canvas>().enabled = false;
+        }
+
+
     }
-       
-
-    public void BonusSpeed()
-    {
-        GetComponent<Canvas>().enabled = true;
-        Invoke(nameof(Norm), 2.2f);
-
-    }
-
-    void Norm()
-    {
-        GetComponent<Canvas>().enabled = false;
-    }
-
 
 }
+
+

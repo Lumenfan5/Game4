@@ -85,6 +85,23 @@ namespace Geekbrains
             speed = 30f;
             run_speed = 50f;
             transform.gameObject.tag = "God";
+            
         }
+        #region отключение скрипта после победы
+        void DisableScript()
+        {
+            GetComponent<PlayerController>().enabled = false;
+        }
+
+        private void OnEnable()
+        {
+            FinishWall.Winned += DisableScript;
+        }
+
+        private void OnDisable()
+        {
+            FinishWall.Winned -= DisableScript;
+        }
+        #endregion
     }
 }
